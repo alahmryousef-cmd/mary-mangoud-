@@ -125,7 +125,8 @@
 
   .container {
     max-width: 800px;
-    width: 90%;
+    width: clamp(300px, 90%, 800px); 
+    padding: clamp(15px, 5vw, 40px);
     text-align: center;
     padding: 40px;
     background: rgba(0,0,0,0.4);
@@ -138,7 +139,7 @@
   }
 
   h1 {
-    font-size: 3rem;
+    font-size:font-size: clamp(1.8rem, 5vw, 3rem);
     margin-bottom: 30px;
     font-weight: 300;
     letter-spacing: 2px;
@@ -159,8 +160,8 @@
 
   .heart-container {
     margin: 20px auto;
-    width: 250px;
-    height: 250px;
+     width: clamp(180px, 30vw, 250px); 
+    height: clamp(180px, 30vw, 250px);
     position: relative;
   }
 
@@ -235,7 +236,7 @@
 
   .message {
     margin-top: 30px;
-    font-size: 1.2rem;
+    font-size: clamp(1rem, 4vw, 1.4rem);
     line-height: 1.6;
     min-height: 200px;
     padding: 15px;
@@ -279,3 +280,9 @@
     .message { font-size: 1rem; }
     .container { padding: 20px; }
   }
+
+  @media (max-width: 480px) {
+    .container { padding: 15px; }
+    h1 { font-size: 2rem; }
+    .message { font-size: 1rem; }
+}
